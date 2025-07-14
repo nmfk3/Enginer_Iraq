@@ -1,160 +1,1224 @@
-<!DOCTYPE html><html lang="ar">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مهندس العراق - الهندسة المدنية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to bottom, #f0f3f5, #ffffff);
-      margin: 0;
-      padding: 0;
-      direction: rtl;
-      color: #2c3e50;
-    }
-    header {
-      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 5px solid #3498db;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin-top: 10px;
-    }
-    nav {
-      background-color: #3498db;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 15px;
-      border-radius: 20px;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-    .content {
-      padding: 30px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      border-right: 5px solid #2980b9;
-      padding-right: 10px;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-    }
-    .card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 25px;
-      padding: 20px;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #2c3e50;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: #2980b9;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .card a:hover {
-      background-color: #1f618d;
-    }
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-    ul {
-      padding-right: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية التميز - منصة تعليمية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-light: #FF9E58;
+            --primary-dark: #D45A00;
+            --secondary: #FFFFFF;
+            --text: #333333;
+            --light-gray: #F5F5F5;
+            --gray: #E0E0E0;
+            --success: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* شريط التنقل */
+        .navbar {
+            background-color: var(--secondary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 45px;
+            margin-left: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .login-btn {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-left: 15px;
+        }
+        
+        .login-btn:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+        
+        .register-btn {
+            background-color: var(--primary);
+            border: 2px solid var(--primary);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .register-btn:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+        
+        /* قسم البطل */
+        .hero {
+            background: linear-gradient(135deg, rgba(255,107,0,0.1) 0%, rgba(255,158,88,0.1) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text);
+        }
+        
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--gray);
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .search-bar input:focus {
+            border-color: var(--primary);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border: none;
+            border-radius: 50px;
+            padding: 10px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* قسم المواد الدراسية */
+        .subjects {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .subject-card {
+            background-color: var(--secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 30px 20px;
+            border: 2px solid transparent;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255,107,0,0.15);
+            border-color: var(--primary-light);
+        }
+        
+        .subject-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255,107,0,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .subject-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        
+        .subject-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .subject-card .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .subject-card .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* قسم الفيديوهات */
+        .videos-section {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+            display: none;
+        }
+        
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-card {
+            background-color: var(--secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 180px;
+            background-color: var(--gray);
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255,107,0,0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .play-icon:hover {
+            background-color: var(--primary);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        .back-to-subjects {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .back-to-subjects i {
+            margin-left: 5px;
+        }
+        
+        /* تذييل الصفحة */
+        .footer {
+            background-color: #222;
+            color: #ddd;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: var(--secondary);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-right: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact i {
+            color: var(--primary);
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #444;
+            color: #777;
+        }
+        
+        /* نظام البث المباشر */
+        .live-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+            display: none;
+        }
+        
+        .live-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .live-stream {
+            width: 100%;
+            max-width: 800px;
+            background-color: #222;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .live-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ff0000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .live-indicator::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            margin-left: 8px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        
+        .live-stream-placeholder {
+            height: 450px;
+            background: linear-gradient(45deg, #111, #333);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .live-info {
+            background-color: var(--secondary);
+            padding: 20px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .live-info h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .live-schedule {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .schedule-item {
+            background-color: var(--secondary);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .schedule-item .subject {
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .schedule-item .time {
+            background-color: rgba(255,107,0,0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        /* نظام الاشتراك */
+        .subscription-section {
+            padding: 80px 0;
+            display: none;
+        }
+        
+        .subscription-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--secondary);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .subscription-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .subscription-header h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .subscription-form {
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--gray);
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .code-display {
+            background-color: rgba(255,107,0,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .code-display h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .code-value {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--primary);
+            background-color: rgba(255,107,0,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        /* رسائل التنبيه */
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .alert-success {
+            background-color: rgba(76, 175, 80, 0.1);
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+        }
+        
+        /* نظام التبديل بين الأقسام */
+        .main-content > section {
+            display: none;
+        }
+        
+        .main-content > section.active {
+            display: block;
+        }
+        
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .nav-links {
+                margin: 20px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .user-actions {
+                margin-top: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>مهندس العراق</h1>
-    <p>الملفات والخدمات الخاصة بطلاب الهندسة المدنية</p>
-  </header>
-  <nav>
-    <a href="#materials">مواد دراسية</a>
-    <a href="#services">خدمات</a>
-    <a href="#contact">تواصل معنا</a>
-  </nav>
-  <div class="content">
-    <section id="materials">
-      <h2>📚 مواد المرحلة الأولى</h2>
-      <div class="card">
-        <h3>الرسم الهندسي - Engineering Drawing</h3>
-        <p>ملخصات، فيديوهات، ملفات DWG، أسئلة امتحانية.</p>
-        <a href="#">تحميل الملفات</a>
-      </div>
-      <div class="card">
-        <h3>مادة الخرسانة - Concrete I</h3>
-        <p>ملخص المحاضرات، نماذج تقارير، أسئلة عملي ونظري.</p>
-        <a href="#">تحميل الملفات</a>
-      </div>
-      <div class="card">
-        <h3>المساحة - Surveying</h3>
-        <p>شروحات، تقارير تجارب، حلول أسئلة عملية.</p>
-        <a href="#">تحميل الملفات</a>
-      </div>
-    </section>
-    <section id="services">
-      <h2>🛠️ خدمات للطلاب</h2>
-      <div class="card">
-        <h3>تنفيذ تقارير وبحوث</h3>
-        <p>نقوم بإعداد تقارير عملي وكتابة بحوث جامعية حسب طلبك.</p>
-        <a href="#contact">احجز خدمتك</a>
-      </div>
-      <div class="card">
-        <h3>تصميم مشاريع أوتوكاد وETABS</h3>
-        <p>نرسم لك مشروعك بدقة واحترافية باستخدام AutoCAD وETABS.</p>
-        <a href="#contact">طلب تصميم</a>
-      </div>
-    </section>
-    <section id="contact">
-      <h2>📞 تواصل معنا</h2>
-      <div class="card">
-        <p>للتواصل وطلب الملفات أو الخدمات، راسلنا عبر:</p>
-        <ul>
-          <li>📧 البريد الإلكتروني: engineeriraq@example.com</li>
-          <li>📱 تليغرام: @EngineerIraq</li>
-          <li>📘 فيسبوك: صفحة مهندس العراق</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-  <footer>
-    <p>© 2025 مهندس العراق - جميع الحقوق محفوظة</p>
-  </footer>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap" style="color: var(--primary); font-size: 2rem;"></i>
+                <h1>أكاديمية <span>التميز</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link" data-target="home">الرئيسية</a></li>
+                <li><a href="#" class="nav-link" data-target="subjects">المواد الدراسية</a></li>
+                <li><a href="#" class="nav-link" data-target="live">البث المباشر</a></li>
+                <li><a href="#" class="nav-link" data-target="subscription">نظام الاشتراك</a></li>
+                <li><a href="#">المدربون</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+            <div class="user-actions">
+                <button class="login-btn">تسجيل الدخول</button>
+                <button class="register-btn">حساب جديد</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <!-- الصفحة الرئيسية -->
+        <section id="home" class="active">
+            <!-- قسم البطل -->
+            <div class="hero">
+                <div class="container">
+                    <h2>التعلم الإلكتروني في أفضل صورة</h2>
+                    <p>انضم إلى آلاف الطلاب الذين يطورون مهاراتهم يومياً من خلال منصتنا التعليمية المتطورة التي تجمع بين المحتوى المتميز والتقنيات الحديثة</p>
+                    <div class="search-bar">
+                        <input type="text" placeholder="ابحث عن دورة أو مادة دراسية...">
+                        <button><i class="fas fa-search"></i> بحث</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم المواد الدراسية -->
+            <div class="subjects">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>المواد الدراسية</h2>
+                        <p>اختر المادة التي ترغب في دراستها من خلال أيقوناتنا التفاعلية</p>
+                    </div>
+                    
+                    <div class="subjects-grid">
+                        <!-- مادة الرياضيات -->
+                        <div class="subject-card" data-subject="math">
+                            <div class="subject-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3>الرياضيات</h3>
+                            <p>دروس متكاملة في الجبر والهندسة والإحصاء والتفاضل والتكامل</p>
+                            <a href="#" class="btn explore-btn" data-subject="math">استكشاف الدروس</a>
+                        </div>
+                        
+                        <!-- مادة الفيزياء -->
+                        <div class="subject-card" data-subject="physics">
+                            <div class="subject-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <h3>الفيزياء</h3>
+                            <p>ميكانيكا، كهرباء، مغناطيسية، فيزياء حديثة، وبصريات</p>
+                            <a href="#" class="btn explore-btn" data-subject="physics">استكشاف الدروس</a>
+                        </div>
+                        
+                        <!-- مادة الكيمياء -->
+                        <div class="subject-card" data-subject="chemistry">
+                            <div class="subject-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3>الكيمياء</h3>
+                            <p>كيمياء عامة، عضوية، تحليلية، فيزيائية، وكيمياء تطبيقية</p>
+                            <a href="#" class="btn explore-btn" data-subject="chemistry">استكشاف الدروس</a>
+                        </div>
+                        
+                        <!-- مادة الأحياء -->
+                        <div class="subject-card" data-subject="biology">
+                            <div class="subject-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h3>الأحياء</h3>
+                            <p>علم الخلية، الوراثة، التشريح، البيئة، والتطور</p>
+                            <a href="#" class="btn explore-btn" data-subject="biology">استكشاف الدروس</a>
+                        </div>
+                        
+                        <!-- مادة اللغة العربية -->
+                        <div class="subject-card" data-subject="arabic">
+                            <div class="subject-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>اللغة العربية</h3>
+                            <p>نحو، صرف، بلاغة، أدب، نصوص، وإملاء</p>
+                            <a href="#" class="btn explore-btn" data-subject="arabic">استكشاف الدروس</a>
+                        </div>
+                        
+                        <!-- مادة اللغة الإنجليزية -->
+                        <div class="subject-card" data-subject="english">
+                            <div class="subject-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h3>اللغة الإنجليزية</h3>
+                            <p>قواعد، محادثة، كتابة، قراءة، واستماع</p>
+                            <a href="#" class="btn explore-btn" data-subject="english">استكشاف الدروس</a>
+                        </div>
+                        
+                        <!-- مادة التاريخ -->
+                        <div class="subject-card" data-subject="history">
+                            <div class="subject-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <h3>التاريخ</h3>
+                            <p>تاريخ قديم، إسلامي، حديث، ومعاصر</p>
+                            <a href="#" class="btn explore-btn" data-subject="history">استكشاف الدروس</a>
+                        </div>
+                        
+                        <!-- مادة الجغرافيا -->
+                        <div class="subject-card" data-subject="geography">
+                            <div class="subject-icon">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <h3>الجغرافيا</h3>
+                            <p>جغرافيا بشرية، طبيعية، اقتصادية، وسياسية</p>
+                            <a href="#" class="btn explore-btn" data-subject="geography">استكشاف الدروس</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- قسم الفيديوهات (يظهر عند اختيار مادة) -->
+        <section id="videos">
+            <div class="videos-section">
+                <div class="container">
+                    <a href="#" class="back-to-subjects"><i class="fas fa-arrow-right"></i> العودة إلى المواد الدراسية</a>
+                    <div class="section-header">
+                        <h2>دروس <span id="subject-title">الرياضيات</span></h2>
+                        <p>اختر الدرس الذي ترغب بمشاهدته من القائمة أدناه</p>
+                    </div>
+                    
+                    <div class="videos-container">
+                        <!-- سيتم ملئ هذا القسم بالديناميكية -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- قسم البث المباشر -->
+        <section id="live">
+            <div class="live-section">
+                <div class="container live-container">
+                    <div class="section-header">
+                        <h2>البث المباشر</h2>
+                        <p>انضم إلى حصصنا المباشرة مع أفضل المدربين المتخصصين</p>
+                    </div>
+                    
+                    <div class="live-stream">
+                        <div class="live-indicator">
+                            <span>بث مباشر</span>
+                        </div>
+                        <div class="live-stream-placeholder">
+                            <div>
+                                <h3>حصة الرياضيات للصف الثالث الثانوي</h3>
+                                <p>يبدأ البث خلال: <span id="countdown">10:00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="live-info">
+                        <h3>حصة التفاضل والتكامل</h3>
+                        <p>انضم إلينا في هذه الحصة المباشرة حيث سنغطي موضوعات التفاضل والتكامل المتقدم للصف الثالث الثانوي. سيقدم الحصة الأستاذ أحمد محمد، خبير الرياضيات والحائز على جائزة المعلم المتميز.</p>
+                        <p>موضوعات الحصة: المشتقات العكسية، التكامل بالتجزئة، التكامل بالتعويض، تطبيقات على التكامل.</p>
+                    </div>
+                    
+                    <div class="live-schedule">
+                        <h3>جدول البث المباشر القادم</h3>
+                        
+                        <div class="schedule-item">
+                            <span class="subject">الفيزياء: الحركة التوافقية البسيطة</span>
+                            <span class="time">غدًا 10:00 ص</span>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <span class="subject">الكيمياء: التفاعلات الكيميائية</span>
+                            <span class="time">غدًا 2:00 م</span>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <span class="subject">اللغة العربية: البلاغة والنقد</span>
+                            <span class="time">بعد غد 9:00 ص</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- قسم نظام الاشتراك -->
+        <section id="subscription">
+            <div class="subscription-section">
+                <div class="container">
+                    <div class="subscription-container">
+                        <div class="subscription-header">
+                            <h2>نظام الاشتراك</h2>
+                            <p>اشترك الآن واحصل على كودك الخاص للوصول إلى جميع الدروس والمزايا</p>
+                        </div>
+                        
+                        <div class="alert alert-success">
+                            تم إنشاء الكود الخاص بك بنجاح!
+                        </div>
+                        
+                        <div class="subscription-form">
+                            <div class="form-group">
+                                <label for="name">الاسم الكامل</label>
+                                <input type="text" id="name" placeholder="أدخل اسمك الكامل">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" placeholder="أدخل رقم هاتفك">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="plan">اختر خطة الاشتراك</label>
+                                <select id="plan" class="form-control">
+                                    <option value="monthly">اشتراك شهري - 50 ريال</option>
+                                    <option value="quarterly">اشتراك ربع سنوي - 120 ريال</option>
+                                    <option value="yearly">اشتراك سنوي - 400 ريال</option>
+                                </select>
+                            </div>
+                            
+                            <button class="submit-btn">إنشاء الكود الخاص</button>
+                        </div>
+                        
+                        <div class="code-display">
+                            <h3>كود اشتراكك الخاص</h3>
+                            <div class="code-value">STU-2025-7A2B</div>
+                            <p>احتفظ بهذا الكود في مكان آمن. ستستخدمه للدخول إلى المنصة والاستفادة من جميع الخدمات.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">أكاديمية <span>التميز</span></a>
+                    <p>منصة تعليمية رائدة تهدف إلى تقديم تجربة تعليمية فريدة ومتميزة من خلال محتوى تعليمي عالي الجودة وتقنيات تعليم متطورة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">المواد الدراسية</a></li>
+                        <li><a href="#">المدربون</a></li>
+                        <li><a href="#">البث المباشر</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">المواد الدراسية</h3>
+                    <ul>
+                        <li><a href="#">الرياضيات</a></li>
+                        <li><a href="#">الفيزياء</a></li>
+                        <li><a href="#">الكيمياء</a></li>
+                        <li><a href="#">الأحياء</a></li>
+                        <li><a href="#">اللغة العربية</a></li>
+                        <li><a href="#">اللغة الإنجليزية</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading">اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> شارع الجامعة، الرياض، المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> +966 11 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@academy.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2023 أكاديمية التميز. تم التطوير بواسطة فريق أكاديمية التميز</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // بيانات الفيديوهات لكل مادة
+        const videosData = {
+            math: [
+                { title: "المعادلات التربيعية", duration: "15:20", views: "1.2K", date: "2023-10-05" },
+                { title: "الهندسة التحليلية", duration: "22:45", views: "980", date: "2023-10-12" },
+                { title: "النهايات والاتصال", duration: "18:30", views: "1.5K", date: "2023-10-19" },
+                { title: "التفاضل والتكامل", duration: "25:10", views: "2.3K", date: "2023-10-26" },
+                { title: "المتتاليات والمتسلسلات", duration: "20:15", views: "1.1K", date: "2023-11-02" },
+                { title: "الاحتمالات والإحصاء", duration: "17:40", views: "890", date: "2023-11-09" }
+            ],
+            physics: [
+                { title: "الحركة في خط مستقيم", duration: "14:50", views: "1.1K", date: "2023-10-07" },
+                { title: "قوانين نيوتن للحركة", duration: "19:30", views: "1.3K", date: "2023-10-14" },
+                { title: "الشغل والطاقة", duration: "16:20", views: "1.0K", date: "2023-10-21" },
+                { title: "الكهرباء الساكنة", duration: "21:15", views: "1.8K", date: "2023-10-28" }
+            ],
+            chemistry: [
+                { title: "التركيب الذري", duration: "13:40", views: "950", date: "2023-10-08" },
+                { title: "الروابط الكيميائية", duration: "18:25", views: "1.2K", date: "2023-10-15" },
+                { title: "التفاعلات الكيميائية", duration: "20:10", views: "1.4K", date: "2023-10-22" }
+            ],
+            biology: [
+                { title: "تركيب الخلية", duration: "16:30", views: "1.0K", date: "2023-10-09" },
+                { title: "الوراثة والمورثات", duration: "22:45", views: "1.6K", date: "2023-10-16" },
+                { title: "التطور والانتخاب الطبيعي", duration: "19:20", views: "1.3K", date: "2023-10-23" }
+            ]
+        };
+        
+        // عناوين المواد
+        const subjectsTitles = {
+            math: "الرياضيات",
+            physics: "الفيزياء",
+            chemistry: "الكيمياء",
+            biology: "الأحياء",
+            arabic: "اللغة العربية",
+            english: "اللغة الإنجليزية",
+            history: "التاريخ",
+            geography: "الجغرافيا"
+        };
+        
+        // تنفيذ التنقل بين الأقسام
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('data-target');
+                
+                // إخفاء جميع الأقسام
+                document.querySelectorAll('.main-content > section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // إظهار القسم المطلوب
+                document.getElementById(target).classList.add('active');
+            });
+        });
+        
+        // تنفيذ استعراض المواد الدراسية
+        document.querySelectorAll('.explore-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const subject = this.getAttribute('data-subject');
+                
+                // تحديث عنوان المادة
+                document.getElementById('subject-title').textContent = subjectsTitles[subject];
+                
+                // ملء الفيديوهات
+                const videosContainer = document.querySelector('.videos-container');
+                videosContainer.innerHTML = '';
+                
+                let videos = videosData[subject] || [
+                    { title: "الدرس الأول", duration: "15:30", views: "1.5K", date: "2023-10-10" },
+                    { title: "الدرس الثاني", duration: "18:45", views: "1.2K", date: "2023-10-17" },
+                    { title: "الدرس الثالث", duration: "22:10", views: "980", date: "2023-10-24" },
+                    { title: "الدرس الرابع", duration: "19:25", views: "1.3K", date: "2023-10-31" }
+                ];
+                
+                videos.forEach(video => {
+                    const videoCard = document.createElement('div');
+                    videoCard.className = 'video-card';
+                    videoCard.innerHTML = `
+                        <div class="video-thumbnail">
+                            <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-play-circle" style="font-size: 4rem; color: #aaa;"></i>
+                            </div>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>${video.title}</h3>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock"></i> ${video.duration}</span>
+                                <span><i class="far fa-eye"></i> ${video.views}</span>
+                            </div>
+                        </div>
+                    `;
+                    videosContainer.appendChild(videoCard);
+                });
+                
+                // إظهار قسم الفيديوهات
+                document.querySelectorAll('.main-content > section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById('videos').classList.add('active');
+            });
+        });
+        
+        // العودة إلى المواد الدراسية
+        document.querySelector('.back-to-subjects').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.main-content > section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('home').classList.add('active');
+        });
+        
+        // إنشاء كود اشتراك
+        document.querySelector('.submit-btn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            if(name && email) {
+                // توليد كود عشوائي
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                let code = 'STU-2025-';
+                for (let i = 0; i < 4; i++) {
+                    code += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                
+                // عرض الكود
+                document.querySelector('.code-value').textContent = code;
+                document.querySelector('.code-display').style.display = 'block';
+                document.querySelector('.alert-success').style.display = 'block';
+                
+                // إخفاء رسالة النجاح بعد 5 ثوان
+                setTimeout(() => {
+                    document.querySelector('.alert-success').style.display = 'none';
+                }, 5000);
+            }
+        });
+        
+        // عد تنازلي للبث المباشر
+        let countdown = 600; // 10 دقائق بالثواني
+        const countdownElement = document.getElementById('countdown');
+        
+        const updateCountdown = () => {
+            const minutes = Math.floor(countdown / 60);
+            const seconds = countdown % 60;
+            
+            countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "بدأ البث الآن!";
+            } else {
+                countdown--;
+            }
+        };
+        
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
-</html>
+  </html>
